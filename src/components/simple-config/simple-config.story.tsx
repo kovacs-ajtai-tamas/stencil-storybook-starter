@@ -1,4 +1,5 @@
 import readme from './readme.md';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 
 export default {
   /**
@@ -7,6 +8,10 @@ export default {
    * however any string should suffice. This supports markdown.
    */
   notes: readme,
+
+  viewport: { 
+    viewports: INITIAL_VIEWPORTS,
+  },
 
   /**
    * The knobs object lets you configure different knobs for
@@ -27,7 +32,7 @@ export default {
     // knobs.number('b-number', 46, { range: true, min: 46, max: 47, step: 1 });
     'b-number': {
       type: 'number',
-      args: [46, { range: true, min: 46, max: 47, step: 1 }]
+      args: [46, { range: true, min: 0, max: 200, step: 1 }]
     },
 
     // This willresult in the following call to knobs:

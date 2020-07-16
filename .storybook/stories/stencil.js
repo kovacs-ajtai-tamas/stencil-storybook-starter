@@ -2,6 +2,7 @@ import path from 'path';
 import Case from 'case';
 import { storiesOf } from '@storybook/html';
 import * as KNOBS from '@storybook/addon-knobs';
+import * as VIEWPORT from '@storybook/addon-viewport';
 
 /*******************************************************************************
  * You should not need to edit anything within this file unless you really     *
@@ -279,7 +280,7 @@ function buildGeneratorConfigs(componentsCtx, storiesCtx) {
  * Iterates all of the stencil contexts and build a "config" object
  * which is used to generate the individual stories.
  */
-function buildStencilStories(name, loader, componentsCtx, storiesCtx) {
+export function buildStencilStories(name, loader, componentsCtx, storiesCtx) {
 	const configs = buildGeneratorConfigs(componentsCtx, storiesCtx);
 
 	// define the custom elements so they are available
@@ -299,5 +300,3 @@ function buildStencilStories(name, loader, componentsCtx, storiesCtx) {
         : createStencilStory(config, stories),
     );
 }
-
-export default buildStencilStories;

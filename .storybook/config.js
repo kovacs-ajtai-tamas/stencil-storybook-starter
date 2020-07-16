@@ -1,5 +1,5 @@
 import { configure } from '@storybook/html';
-import buildStencilStories from './stories/stencil';
+import { buildStencilStories } from './stories/stencil';
 
 // The following contexts will be used to generate stories
 // for multiple collections of components. This is particulary
@@ -7,7 +7,7 @@ import buildStencilStories from './stories/stencil';
 const COLLECTIONS = [
   {
     name: 'Stencil Components',
-    loader: require('../loader/index.cjs.js'),
+    loader: require('../dist/loader/index.cjs.js'),
     componentsCtx: require.context('../dist/collection', true, /\/components\/([^/]+)\/\1\.js$/),
     storiesCtx: require.context('../src', true, /\.story\.tsx$/)
   }

@@ -2,6 +2,7 @@ module.exports = (api) => {
     api.cache(true);
 
     return {
+        sourceType: 'unambiguous',
         presets: [
             [
                 '@babel/env',
